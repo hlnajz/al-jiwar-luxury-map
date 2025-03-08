@@ -1,84 +1,82 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 38 45% 98%;
+    --foreground: 30 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 38 45% 98%;
+    --card-foreground: 30 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 38 45% 98%;
+    --popover-foreground: 30 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 38 59% 52%;
+    --primary-foreground: 38 45% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 38 15% 90%;
+    --secondary-foreground: 30 10% 15%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 38 15% 90%;
+    --muted-foreground: 30 10% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 38 59% 52%;
+    --accent-foreground: 38 45% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 38 45% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 15% 80%;
+    --input: 30 15% 80%;
+    --ring: 38 59% 52%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 30 10% 10%;
+    --foreground: 38 45% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 30 10% 10%;
+    --card-foreground: 38 45% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 30 10% 10%;
+    --popover-foreground: 38 45% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 38 59% 52%;
+    --primary-foreground: 30 10% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 30 8% 20%;
+    --secondary-foreground: 38 45% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 30 8% 20%;
+    --muted-foreground: 38 30% 70%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 38 59% 52%;
+    --accent-foreground: 30 10% 10%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 38 45% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 30 8% 20%;
+    --input: 30 8% 20%;
+    --ring: 38 59% 52%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -96,6 +94,156 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-primary;
+  }
+}
+
+@layer components {
+  .ornamental-divider {
+    position: relative;
+    height: 1px;
+    background-color: theme('colors.gold.DEFAULT');
+    overflow: visible;
+  }
+  
+  .ornamental-divider::before,
+  .ornamental-divider::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 2.5L17.9 11.1L27 11.1L19.6 16.4L22.5 25L15 19.7L7.5 25L10.4 16.4L3 11.1L12.1 11.1L15 2.5Z' fill='%23D4AF37'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -10px;
+  }
+  
+  .ornamental-divider::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .ornamental-divider::after {
+    display: none;
+  }
+  
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-md border border-white/30 shadow-lg;
+  }
+  
+  .arabesque-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.828-1.415 1.415L51.8 0h2.827zM5.373 0l-.83.828L5.96 2.243 8.2 0H5.374zM48.97 0l3.657 3.657-1.414 1.414L46.143 0h2.828zM11.03 0L7.372 3.657 8.787 5.07 13.857 0H11.03zm32.284 0L49.8 6.485 48.384 7.9l-7.9-7.9h2.83zM17.716 0L11.23 6.485l1.414 1.414 7.9-7.9h-2.827zM41.544 0c-.665 0-1.33.02-1.998.064l-2.827 2.827c-1.015-.063-2.04-.063-3.058 0L30.84 0H41.545zM18.456 0c.665 0 1.33.02 1.998.064l2.827 2.827c1.015-.063 2.04-.063 3.058 0L29.16 0H18.454zm9.160 2.826c.5-.032 1-.032 1.5 0l1.827-1.827c-.5-.02-1-.02-1.5-.02s-1 0-1.5.02l1.827 1.827zm-11.5 2.828l1.414-1.414 17.9 17.9c.896.895 1.395 2.115 1.395 3.388 0 .212-.02.424-.06.636l1.94 1.94c.236-.82.414-1.668.414-2.576 0-2.02-.777-3.944-2.192-5.357L17.83 1.97c-.4-.03-.8-.047-1.2-.047s-.797.016-1.195.046l-1.827 1.828c.818.104 1.63.27 2.423.497l1.416-1.416zm-6.602 5.828L9.1 12.897l.85.85c.618-.24 1.253-.44 1.902-.6l-1.902-1.902zm33.37-2.828c.8.396 1.576.87 2.31 1.415l1.415-1.415c-.935-.626-1.918-1.162-2.94-1.595l-.786.786zm-37.6 4.243h3.02L7 14.314v-1.313H5.687zm40.656 4.243L40.8 19.566c.324.755.49 1.57.49 2.395 0 .92-.23 1.815-.645 2.598l1.312 1.313c.624-1.152.96-2.463.96-3.812 0-1.344-.337-2.644-.96-3.797zm-35.313 0c-.624 1.152-.96 2.463-.96 3.812 0 1.344.336 2.644.96 3.797l1.313-1.313c-.418-.773-.646-1.67-.646-2.587 0-.825.165-1.64.49-2.394l-1.416-1.313zm32.202 2.828L27.524 29.72c-1.2 1.2-3.174 1.2-4.364 0l-5.09-5.09c-.63-.63-.982-1.458-1.036-2.322-.054-.864.222-1.697.752-2.378l-1.41-1.41c-.862 1.122-1.318 2.524-1.242 3.968.076 1.445.662 2.812 1.677 3.828l5.09 5.1c1 1 2.32 1.5 3.637 1.5s2.638-.5 3.638-1.5l14.93-14.93c-.33-.33-.7-.615-1.09-.853zm-26.11 1.414L16.58 21.83c.093-.042.192-.065.292-.065h.276v-.275c0-.1.024-.2.07-.292l-1.415-1.416zm13.607 14.93l-4.95 4.95c-.636.635-1.484.982-2.383.982s-1.746-.346-2.38-.98l-1.42 1.42c.958.958 2.236 1.487 3.59 1.487 1.352 0 2.63-.53 3.59-1.487l4.95-4.95-1.1-1.42zM26.74 41.95c-.194.195-.42.35-.67.46l1.406 1.406c.52-.2 1-.48 1.417-.897l3.536-3.536-1.414-1.414-3.537 3.535c-.195.196-.432.362-.697.445h-.04zm-5.064 2.628c-1.1 0-2.142.432-2.922 1.212l-5.677 5.677c-1.61 1.61-1.61 4.233 0 5.844 1.61 1.61 4.232 1.61 5.844 0l5.677-5.678c.78-.78 1.212-1.822 1.212-2.92 0-1.1-.43-2.143-1.212-2.923-1.152-1.152-2.958-1.477-4.477-1.023l1.414 1.414c.844-.376 1.863-.203 2.536.47.445.445.69 1.036.69 1.66 0 .628-.245 1.22-.69 1.66l-5.678 5.68c-.917.917-2.403.917-3.32 0-.916-.916-.916-2.4 0-3.318l5.676-5.677c.446-.444 1.035-.69 1.66-.69.626 0 1.214.245 1.66.69l1.413-1.414c-.78-.78-1.82-1.21-2.92-1.21zm-2.96-20.24l1.415 1.414 3.95-3.95-1.413-1.415-3.95 3.95zm14.897-9.9c-.8-.396-1.575-.872-2.31-1.416L29.89 14.43c.935.626 1.92 1.162 2.942 1.596l.786-.786z' fill='%23D4AF3720' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+  
+  .with-hover-effect {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .button-hover {
+    @apply relative overflow-hidden transition-all duration-300 ease-in-out transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .button-hover::after {
+    content: '';
+    @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300 ease-in-out;
+  }
+  
+  .button-hover:hover::after {
+    @apply opacity-20;
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hide scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Page transitions */
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-transition {
+  animation: pageTransition 0.8s ease-out forwards;
+}
+
+/* Product card hover effects */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom loader */
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  border-top-color: #D4AF37;
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Map marker pulse effect */
+.map-marker-pulse {
+  position: relative;
+}
+
+.map-marker-pulse::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: rgba(212, 175, 55, 0.4);
+  z-index: -1;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
   }
 }
